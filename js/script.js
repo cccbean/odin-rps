@@ -8,14 +8,30 @@ function getRandomInt(int) {
 function getComputerChoice() {
     const randomInt = getRandomInt(3);
     if (randomInt === 0) {
-        return "Rock";
+        return "rock";
     }
     else if (randomInt === 1) {
-        return "Paper";
+        return "paper";
     }
     else {
-        return "Scissors";
+        return "scissors";
     }
 }
 
-console.log(getComputerChoice());
+function roundGame(playerSelection, computerSelection) {
+    let playerChoice = playerSelection.toLowerCase();
+    console.log(computerSelection);
+
+    if ((playerChoice === "rock" && computerSelection === "scissors") || (playerChoice === "paper" && computerSelection === "rock") || (playerChoice === "scissors" && computerSelection === "paper")) {
+        return `You win, ${playerChoice} beats ${computerSelection}!`;
+    }
+    else if (playerChoice === computerSelection) {
+        return `It's a tie, you both chose ${playerChoice}.`
+    }
+    else {
+        return `You lose, ${playerChoice} loses to ${computerSelection}...`
+    }
+
+}
+
+console.log(roundGame("ROCK", getComputerChoice()));
