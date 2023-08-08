@@ -34,4 +34,34 @@ function roundGame(playerSelection, computerSelection) {
 
 }
 
-console.log(roundGame("ROCK", getComputerChoice()));
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Make your selection:");
+        const results = roundGame(playerSelection, getComputerChoice());
+        
+        if (!(results.search("win") === -1)) {
+            playerWins++;
+        }
+        else if (!(results.search("lose") === -1)) {
+            computerWins++;
+        }
+        console.log(results);
+        // console.log(playerWins);
+        // console.log(computerWins);
+    }
+
+    if (playerWins > computerWins) {
+        console.log(`You won!!! You beat the computer ${playerWins} to ${computerWins}!`)
+    }
+    else if (playerWins < computerWins) {
+        console.log(`You lost... It was ${playerWins} to ${computerWins}.`)
+    }
+    else {
+        console.log(`It's a tie! ${playerWins}-${computerWins}`)
+    }
+}
+
+game();
