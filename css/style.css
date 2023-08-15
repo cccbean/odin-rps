@@ -1,0 +1,66 @@
+div {
+    /* border: 2px solid red; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    gap: 8px;
+}
+
+.header {
+    align-items: center;
+    background-color: #272829;
+    color: #D8D9DA;
+}
+
+.section h1 {
+    align-self: center;
+    margin: 0;
+}
+
+.section p {
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+}
+
+.player, .player * {
+    background-color: #D8D9DA;
+    color: #272829;
+}
+
+.computer, .computer * {
+    background-color: #61677A;
+    color: #272829;
+}
+
+.buttons {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.buttons button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #272829;
+    font-size: 64px;
+}
+
+.player button {
+    cursor: pointer;
+}
