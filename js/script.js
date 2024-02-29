@@ -1,3 +1,13 @@
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+const newGameButton = document.querySelector("#new-game");
+
+rockButton.addEventListener("click", gameRock);
+paperButton.addEventListener("click", gamePaper);
+scissorsButton.addEventListener("click", gameScissors);
+newGameButton.addEventListener("click", newGame);
+
 function getRandomInt(int) {
   // Creates random integer from 0 to (int - 1) for a total of int numbers
   return Math.floor(Math.random() * int);
@@ -15,21 +25,6 @@ function getComputerChoice() {
     return "scissors";
   }
 }
-
-// On player click, run the round. Update round #, score, text, computer choice div. Unhighlight button.
-
-
-
-const rockButton = document.querySelector("#rock");
-const paperButton = document.querySelector("#paper");
-const scissorsButton = document.querySelector("#scissors");
-const newGameButton = document.querySelector("#new-game");
-
-rockButton.addEventListener("click", gameRock);
-paperButton.addEventListener("click", gamePaper);
-scissorsButton.addEventListener("click", gameScissors);
-newGameButton.addEventListener("click", newGame);
-
 
 function playerChoseRock(computerSelection) {
   if (computerSelection === "scissors") {
